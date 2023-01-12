@@ -80,6 +80,7 @@ ul {
 .navigation-item {
     margin-right: 40px;
     margin-left: auto;
+    
    /* border: 2px solid tomato;*/
 }
 .navigation-item:last-child {
@@ -89,6 +90,8 @@ ul {
     display: block;
     font-weight: 500;
     color:var(--maintext-color);
+    position: relative;
+
 }
 
 .navigation-link:hover,
@@ -163,12 +166,14 @@ ul {
     background-color: var(--violet-color);
     border-radius: 4px;
     border-color: transparent;
-    cursor: pointer;   
+    cursor: pointer; 
+    /*transition: background-color 300ms linear, color ;  */
 }
 
 .hero-buttom:hover,
 .hero-buttom:focus {
     background-color: var(--btn-navigation);
+
 }
 
 /* Section tefnology*/
@@ -212,7 +217,7 @@ ul {
 
 .work {
     padding-top: 120px;
-    margin-bottom: 120px;
+    padding-bottom: 120px;
     
 }
 
@@ -639,10 +644,8 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    /*min-width: 1440px;
-    height: 677px;*/
-
     background: rgba(46, 47, 66, 0.4);
+    transition: opasity 300ms linear, visibility 300ms linear;
 }
 
 .modal {
@@ -659,10 +662,10 @@ ul {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
-.modal-buttom { 
+.modal-close { 
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 24px;
+    right: 24px;
 
     display: flex;
     justify-content: center;
@@ -671,6 +674,7 @@ ul {
     width: 24px;
     height: 24px;
 
+    border-radius: 50%;
     background: var(--bord-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -680,7 +684,38 @@ ul {
 }
 
 .is-hidden {
-    visibility: visible;
-    opacity: 0.2;
-    pointer-events: fill;
+    visibility: hidden;
+    opacity:0;
+    pointer-events: none;
 }
+.backdrop.is-hidden .modal {
+    transform: translate(-50%,-50%) scale(0) rotate(-50deg);
+    transition:  300ms linear;
+}
+
+
+.current::after
+ {
+    position: absolute;
+    content: '';
+    background: #404BBF;
+    border-radius: 2px;
+    width: 100%;
+    height: 4px;
+    top: 45px;
+    
+}
+
+/*.app-wrap {
+    position: relative;
+}
+.app-text-top {
+    position: absolute;
+    top: 0;
+    color: #2E2F42;
+    padding: ;
+    height: 100%;
+    transform: translateY(100%);
+    transition: trnsform 300ms linear;
+
+}*/
