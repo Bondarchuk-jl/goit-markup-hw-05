@@ -502,7 +502,7 @@ ul {
     height:40px  ;
     width: 40px;
     background-image: url();
-    background-color:#4D5AE5 ;
+    background-color:var(--violet-color);
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
@@ -527,7 +527,7 @@ ul {
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: #4D5AE5;
+    background-color: var(--violet-color);
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
@@ -628,7 +628,7 @@ ul {
 }
 
 .footersoc-icon {
-    fill: #F4F4FD;
+    fill: var(--lightgray-color);
 }
 
 .footersoc-link:hover,
@@ -637,7 +637,8 @@ ul {
 }
 
 /*tema 5*/
-
+/* ця частина відповідає за
+ створення бедропа і модального вікна*/
 .backdrop {
     position: fixed;
     top: 0;
@@ -682,28 +683,28 @@ ul {
    fill: currentColor;
     
 }
-
+/*зникнення модального вікна*/
 .is-hidden {
     visibility: hidden;
     opacity:0;
     pointer-events: none;
 }
-.backdrop.is-hidden .modal {
-    transform: translate(-50%,-50%) scale(0) rotate(-50deg);
+.backdrop.is-hidden>.modal {
+    transform: translate(-50%,-50%)  rotate(-50deg);
     transition:  300ms linear;
 }
 
-
+/* елемент відповідає за полоску під навігацією*/
 .current::after
  {
     position: absolute;
     content: '';
-    background: #404BBF;
+    background: var(--btn-navigation);
     border-radius: 2px;
     width: 100%;
     height: 4px;
     top: 45px;
-    
+    left: 0;
 }
 
 /*.app-wrap {
