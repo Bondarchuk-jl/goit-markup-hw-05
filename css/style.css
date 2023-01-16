@@ -6,7 +6,6 @@
    --main-color: #FFFFFF;
    --lightgray-color: #F4F4FD;
     --bord-color: #E7E9FC;
-
    --linear-gradient: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
 }
 body{
@@ -48,7 +47,7 @@ ul {
     border-bottom: 1px solid var(--bord-color);
 }
 
-/*скинути підкреслення на ссілках*.*/
+/*скинути підкреслення на ссbлках*.*/
 .link {
     text-decoration: none;
 }
@@ -91,6 +90,7 @@ ul {
     font-weight: 500;
     color:var(--maintext-color);
     position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -98,6 +98,7 @@ ul {
 .navigation-link:focus {
     color: var(--btn-navigation);
 }
+
 .contacts {    
     display: flex;
 }
@@ -113,7 +114,8 @@ ul {
  .contact-adress {
     font-style: normal;
     font-weight: 400;
-    color: var(--gray-color);   
+    color: var(--gray-color); 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts-adress:last-child {
     margin-right: 0;
@@ -133,21 +135,21 @@ ul {
     text-align: center;
     padding-top:188px  ;
     padding-bottom: 188px; 
-
 }
 
 .hero-text {
     font-weight: 700;
     font-size: 56px;
     line-height: 1.07;
-    text-align: center;
-    justify-content: center;
-    color: var(--main-color);
+
     margin-top: 0;
     margin-bottom: 48px;
     padding-right: 317px;
     padding-left: 317px;
-    
+
+    text-align: center;
+    justify-content: center;
+    color: var(--main-color);
    
 }
 
@@ -167,7 +169,15 @@ ul {
     border-radius: 4px;
     border-color: transparent;
     cursor: pointer; 
-    /*transition: background-color 300ms linear, color ;  */
+    /* Анімація бєкграунда кнопки . Задається те, 
+    що ми хочемо анімувати у саму кнопку*/
+
+    transition: background-color 250ms  cubic-bezier(0.4, 0, 0.2, 1);
+
+   /*transition-property: background-color;
+    transition-duration: 250ms; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);*/ 
+    
 }
 
 .hero-buttom:hover,
@@ -218,7 +228,6 @@ ul {
 .work {
     padding-top: 120px;
     padding-bottom: 120px;
-    
 }
 
 .work-maintext,
@@ -284,8 +293,6 @@ ul {
     background: var(--maintext-color);
     padding-top: 100px; 
     padding-bottom: 100px;
-    
-    
 }
 
 .logo-footer-first, .logo-footer-second {
@@ -351,7 +358,12 @@ ul {
 
     border: 1px solid ;
     border-color:var(--bord-color);
-    border-radius: 4px;    
+    border-radius: 4px; 
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-buttom:hover,
@@ -369,7 +381,7 @@ ul {
 
 }
 
-/* Section portfolio aalication*/
+/* Section portfolio aplication*/
 .app-list {
     display: flex;
     flex-wrap: wrap;
@@ -383,6 +395,7 @@ ul {
     width: 360px;
     margin-right: 24px;
     margin-bottom: 48px ;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .app-item:nth-child(3n) {
     margin-right: 0;
@@ -506,8 +519,10 @@ ul {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 50%;
+    transition: background-color  250ms cubic-bezier(0.4, 0, 0.2, 1)
   }
-  .linkul:hover {
+  .linkul:hover,
+  .linkul:focus {
     background-color: #404BBF;
   }
 
@@ -533,6 +548,8 @@ ul {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   
   }
 
   .teamsoc-icon {
@@ -541,7 +558,7 @@ ul {
 
   .teamsoc-link:hover,
   .teamsoc-link:focus {
-    background: #404BBF;
+    background: var(--btn-navigation);
   }
  .customers {
     padding-bottom: 120px;
@@ -571,6 +588,9 @@ ul {
     justify-content: center;
     align-items: center;
     color: #8E8F99;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
  /*.customers-icon {
     fill: #AFB1B8;}
@@ -589,8 +609,8 @@ ul {
 .customers-link:hover,
 .customers-link:focus
  {
-    border-color: #404BBF;
-    color: #404BBF;
+    border-color: var(--btn-navigation);
+    color: var(--btn-navigation);
 }
 .footer-soc {
     margin-left: 120px;
@@ -625,6 +645,7 @@ ul {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footersoc-icon {
@@ -646,15 +667,19 @@ ul {
     width: 100%;
     height: 100%;
     background: rgba(46, 47, 66, 0.4);
-    transition: opasity 300ms linear, visibility 300ms linear;
+    transition: opacity 250ms linear, 
+    visibility 250ms linear;
 }
 
 .modal {
     position: absolute ;
     top: 88px;
     left: 516px;
-    
-    min-width: 408px;
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+    width: 408px;
     min-height: 576px;
     
     opacity: 1;
@@ -662,6 +687,8 @@ ul {
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+    transform:  scale(1);
+    transition: transform 250ms linear;
 }
 .modal-close { 
     position: absolute;
@@ -689,9 +716,8 @@ ul {
     opacity:0;
     pointer-events: none;
 }
-.backdrop.is-hidden>.modal {
-    transform: translate(-50%,-50%)  rotate(-50deg);
-    transition:  300ms linear;
+.backdrop.is-hidden .modal {
+    transform:   scale(0) ;  
 }
 
 /* елемент відповідає за полоску під навігацією*/
@@ -707,16 +733,18 @@ ul {
     left: 0;
 }
 
-/*.app-wrap {
+.app-wrap {
     position: relative;
 }
 .app-text-top {
     position: absolute;
     top: 0;
+    left: 0;
+
     color: #2E2F42;
     padding: ;
     height: 100%;
     transform: translateY(100%);
-    transition: trnsform 300ms linear;
+    transition: 300ms linear;
 
-}*/
+}
