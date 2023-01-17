@@ -392,6 +392,7 @@ ul {
     border-top-color: transparent;
 }
 .app-item {
+    
     width: 360px;
     margin-right: 24px;
     margin-bottom: 48px ;
@@ -406,10 +407,11 @@ ul {
 }
 /*.app-item:ntn-child(7,8,9) {
     padding-bottom:120px;
-}
-
-/*.app-link { 
 }*/
+
+.app-link { 
+    
+}
 
 .app-maintext {
     font-weight: 500;
@@ -708,7 +710,6 @@ ul {
 }
 .modal-icon {
    fill: currentColor;
-    
 }
 /*зникнення модального вікна*/
 .is-hidden {
@@ -717,9 +718,9 @@ ul {
     pointer-events: none;
 }
 .backdrop.is-hidden .modal {
-    transform:   scale(0) ;  
+    transform:   scale(2) ;  
 }
-
+/* scale(0)*/
 /* елемент відповідає за полоску під навігацією*/
 .current::after
  {
@@ -735,16 +736,22 @@ ul {
 
 .app-wrap {
     position: relative;
+    overflow: hidden;
 }
 .app-text-top {
     position: absolute;
     top: 0;
-    left: 0;
-
-    color: #2E2F42;
-    padding: ;
+    font-weight: 400;
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+    background: var(--violet-color);
+    color: var(--lightgray-color);
     height: 100%;
     transform: translateY(100%);
-    transition: 300ms linear;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.app-item:hover .app-text-top {
+    transform: translateY(0);
 }
